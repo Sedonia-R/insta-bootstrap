@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sedonia's_Instgram_with_Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e82b4215f2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css"/> <!--added a css file for text styling-->
+</head>
+<body>
+    <div class="container-fluid"> <!--Top row containing Instagram icon and dropdown menus-->
+        <div class="row">
+            <nav class="navbar-light container-fluid navbar bg-light d-flex">
+                <div class="flex-grow-1 px-2"> <!--flex-grow expands the first div, with the Instagram logo and text to fill the space to the left of the dropdowns-->
+                    <a class="navbar-brand"><i class="fa-brands fa-instagram"></i> Instagram</a> <!--navbar-brand used for styling Instagram logo and text inserted here-->
+                </div>
+                <div>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newPostModal"> <!--Create new post button. Modal used for pop-up feature-->
+                        Create a new post
+                    </button>
+                    <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true"> <!--Modal code. Is this the right place to put it? Also - I'm unsure the purpose of tabindex="-1" and the various aria related text-->
+                        <div class="modal-dialog">  <!--The order of nesting matters here-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="newPostModalLabel">Create a new post</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3"> <!--spacing added to the bottom here for styling-->
+                                        <label for="text-area" class="col-form-label">Caption:</label>
+                                        <textarea id="text-area" class="form-control" aria-label="textarea" placeholder="Add the caption of your post here"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer"> <!--header, body, and footer have automatic styling with dividing lines-->
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-success">Publish</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown px-2"> <!--Settings button on top navbar-->
+                    <button class="btn btn-secondary nav-item dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                        <li><a class="dropdown-item" href="#">Privacy & Data</a></li>
+                        <div class="dropdown-divider"></div> <!--dividing line in dropdown-->
+                        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!--Main body under the top "banner"-->
+    <ul class="nav nav-pills justify-content-center" id="nav-tab" role="tablist"> <!--Grid and square icons as buttons-->
+        <li class="nav-item" role="presentation">
+        <button class="nav-link active text-secondary bg-white" id="pills-grid-tab" data-bs-toggle="pill" data-bs-target="#pills-grid" type="button" aria-controls="grid" aria-selected="true"><i class="fa-solid fa-table-cells m-3"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+        <button class="nav-link text-secondary bg-white" id="pills-view-tab" data-bs-toggle="pill" data-bs-target="#pills-view" type="button" aria-controls="square" aria-selected="false"><i class="fa-solid fa-square m-3"></i></button>
+        </li>
+    </ul>
+    <!--Container for the content of either tab-->
+    <div class="tab-content d-flex justify-content-center" id="pills-tab"> <!--I guess the tab-conent div is needed to contain the tab-pane div?-->
+        <!--Everything that shows up when the grid icon is selected-->
+        <div class="tab-pane fade show active" id="pills-grid" role="tabpanel" aria-labelledby="pills-grid-tab" tabindex="0">
+            <div class="container-fluid justify-content-center">
+                <div class="row"> <!--top row of pictures-->
+                    <div class="col gx-0"> <!--gutters (gx) set to zero on top and bottom for styling-->
+                        <img src="Picture1.png" alt="Picture of Spark the dog">
+                    </div>
+                    <div class="col gx-0">
+                        <img src="Picture2.png" alt="Picture of students standing in a hallway">
+                    </div>
+                    <div class="col gx-0">
+                        <img src="Picture3.png" alt="Picture of Croatia from aerial view">
+                    </div>
+                </div>
+                <div class="row"> <!--middle row of pictures-->
+                    <div class="col gx-0">
+                        <img src="Picture4.png" alt="Picture of woman laughing">
+                    </div>
+                    <div class="col gx-0">
+                        <img src="Picture5.png" alt="Picture of the Eiffel tower">
+                    </div>
+                    <div class="col gx-0">
+                        <img src="Picture6.png" alt="Picture of the soccer player Cristiano kicking the ball over his head">
+                    </div>
+                </div>
+                <div class="row"> <!--bottom row of pictures-->
+                    <div class="col gx-0">
+                        <img src="Picture7.png" alt="Picture of a heteronormative familiy with a mom, dad, son, and daughter">
+                    </div>
+                    <div class="col gx-0">
+                        <img src="Picture8.png" alt="Picture showing some lines of code written on a computer screen">
+                    </div>
+                    <div class="col gx-0">
+                        <img src="Picture9.png" alt="Picture of some students sitting in a classroom laughing">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Everything that shows up with the square icon is selected-->
+        <div class="tab-pane fade" id="pills-view"> <!--fade doesn't seem necessary-->
+            <div class="container-fluid col-8 px-0"> <!--Setting the size of the single column of pictures-->
+                <div class="col-12 border mb-4 justify-content-center"> <!--Changing the class from row to col solved a whitespace issues around my divs:/ -->
+                    <div class="row justify-content-between container-fluid mt-1"> 
+                        <div class="col-9 text-start px-0"> <!--text-start pushes the text to the left (the start)-->
+                            <strong class="fs-6">My Crazy Dog Spark!</strong>
+                        </div>
+                        <div class="col-1 text-end"> <!--text-end pushes the text to the right (the end)-->
+                            08/26
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="Picture1-cropped.png" alt="Cute picture of my dog Spark">
+                    </div>
+                    <div class="row px-2">
+                        <strong>204 Likes</strong>
+                        <p class="roboto-regular">This is an example of a very good photo that you can post on Instagram</p>
+                    </div>
+                </div>
+                <div class="col-12 border mb-4 justify-content-center">
+                    <div class="row container-fluid mt-1"> 
+                        <div class="col-11 text-start px-0">
+                        <div class="col-10 text-start px-0">
+                            <strong>The greatness of Croatia</strong>
+                        </div>
+                        <div class="col-1 text-end">
+                            04/09
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="Picture3-cropped.png" alt="Aerial picture of Croatia">
+                    </div>
+                    <div class="row px-2">
+                        <strong>26985 Likes</strong>
+                        <p class="roboto-regular">This is another example of a photo that you can post on Instagram</p>
+                    </div>
+                </div>
+                <div class="col-12 border mb-4 justify-content-center">
+                    <div class="row container-fluid mt-1"> 
+                        <div class="col-11 text-start px-0">
+                            <strong>Amazing GOAL by Cristiano!</strong>
+                        </div>
+                        <div class="col-1 text-end">
+                            06/10
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="Picture6-cropped.png" alt="Picture of an epic goal scored by Cristiano">
+                    </div>
+                    <div class="row px-2">
+                        <strong>63542 Likes</strong>
+                        <p class="roboto-regular">Look at this guy! Wow!!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
+</body>
